@@ -1,0 +1,6 @@
+.env
+backups
+mc-data
+*.tar.gz
+*.tar
+data/
