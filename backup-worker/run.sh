@@ -14,6 +14,8 @@ if [ -z $1 ]; then
     curl -X MKCOL -u "$NEXTCLOUD_USER:$NEXTCLOUD_PASSWD" https://$NEXTCLOUD_HOST/nextcloud/remote.php/dav/files/$NEXTCLOUD_USER/mc-backups
 
     curl -T "$ARCHIVE_PATH" -u "$NEXTCLOUD_USER:$NEXTCLOUD_PASSWD" "https://$NEXTCLOUD_HOST/nextcloud/remote.php/dav/files/mark/mc-backups/$ARCHIVE_NAME"
+
+    python3 remove_old_backups.py
 fi
 
 overviewer.py --config=/work/overviewer_config.py
