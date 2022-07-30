@@ -40,5 +40,5 @@ renders["End"] = {
 #}
 
 outputdir = "/webmap"
-texturepath = "/work/texturepack-newdefault.zip"
-processes=20
+texturepath = "/root/.minecraft/versions/1.17/1.17.jar"
+processes=2
