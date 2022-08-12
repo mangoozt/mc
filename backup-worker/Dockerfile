@@ -3,7 +3,7 @@ FROM ghcr.io/mangoozt/mc:latest
 
 
 #RUN apt-get update && \
-#    apt-get install -y wget gnupg build-essential curl python3-pillow python3-dev python3-numpy python3-pip && \ 
+#    apt-get install -y wget gnupg build-essential curl python3-pillow python3-dev python3-numpy python3-pip && \
 #    rm -rf /var/lib/apt/lists/*
 
 #RUN python3 -m pip install --no-cache-dir requests dateutils
@@ -18,8 +18,9 @@ FROM ghcr.io/mangoozt/mc:latest
 
 ENV VERSION=1.17
 RUN mkdir -p ~/.minecraft/versions/${VERSION}/ \
-    && wget https://overviewer.org/textures/${VERSION} -O ~/.minecraft/versions/${VERSION}/${VERSION}.jar    
+    && wget https://overviewer.org/textures/${VERSION} -O ~/.minecraft/versions/${VERSION}/${VERSION}.jar
 
+RUN python3 -m pip install --no-cache-dir requests dateutils boto3
 COPY . /work
 
 WORKDIR /work

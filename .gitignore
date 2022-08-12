@@ -4,3 +4,4 @@ mc-data
 *.tar.gz
 *.tar
 data/
+backup-worker/venv

@@ -7,7 +7,8 @@ from dateutil import tz
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 
-if __name__ == "__main__":
+
+def rotate_nextcloud():
     auth = os.environ['NEXTCLOUD_USER'], os.environ['NEXTCLOUD_PASSWD']
     host = os.environ['NEXTCLOUD_HOST']
     nextcloud_user = os.environ['NEXTCLOUD_USER']
@@ -35,3 +36,8 @@ if __name__ == "__main__":
                                 auth=auth)
 
 
+if __name__ == "__main__":
+    if os.getenv('$NEXTCLOUD_HOST'):
+        rotate_nextcloud()
+    if os.getenv('S3_BUCKET'):
+        pass
